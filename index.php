@@ -14,13 +14,13 @@
 </head>
 <body class="bg-secondary">
     <div id="app">
-        <div class="wrapper w-100 h-100">
+        <div class="wrapper">
                 <h1 class="text-center text-white mt-5">TodoList</h1>
                 <h4 class="text-center text-white">Crea e modifica la tua lista</h4>
                 <h3 class="text-center text-white mt-4"><i class="fa-solid fa-arrow-down"></i></h3>
                 <div class="container d-flex align-items-center justify-content-center">
                 <div class="card mt-4">
-                    <div class="card-header">
+                    <div class="card-header d-flex gap-3">
                         <input type="text" class="form-control" placeholder="Inserisci Ingrediente..." aria-describedby="button-add" v-model="todoItem" @keyup.enter="updateItem">
                         <button @click="updateItem" class="btn btn-outline-primary ms-3" type="button" id="button-add">Aggiungi</button>
                     </div>
@@ -28,7 +28,7 @@
                             <ul class="list-unstyled" v-if="todoList.length > 0 ">
                     
                         
-                                <li class="d-flex justify-content-between" v-for="(item, index) in todoList" :class="item.complete ? 'text-decoration-line-through': '' ">
+                                <li @click="complete(index)" class="d-flex justify-content-between" v-for="(item, index) in todoList" :class="item.complete ? 'text-decoration-line-through': '' ">
                                     <p>{{item.text}}</p>
                                 </li>
                             </ul>

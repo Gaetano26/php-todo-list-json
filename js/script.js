@@ -23,15 +23,16 @@ createApp({
                 complete : false
 
             }
-
+            
             axios.post(this.apiUrl, data, { headers: {'Content-Type': 'multipart/form-data'} }).then((res)=>{
                    this.todoItem = '';
                    this.todoList = res.data
             });
+            console.log (this.todoList);
         },
 
-       complete (){
-       
+       complete (index){
+        this.todoList[index].complete = !this.todoList[index].complete;
        },
     },
     mounted() {
