@@ -30,13 +30,14 @@
                         
                                 <li  class="d-flex justify-content-between align-items-center gap-5 mt-2" v-for="(item, index) in todoList">
                                     <p @click="complete(index)" :class="item.complete ? 'text-decoration-line-through': '' ">{{item.text}}</p>
-                                    <button type="button" class="btn btn-outline-primary ms-3 fs-6" @click="delete(index)" >Cancella</button>
+                                    <button @click="deleteTask(index)" type="button" class="btn btn-outline-primary ms-3 fs-6">Cancella</button>
                                 </li>
+                                
                             </ul>
                     </div>
                         
                 </div>    
-                </div>   
+                </div>   s
                 
                 
                 

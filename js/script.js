@@ -37,19 +37,23 @@ createApp({
         }
 
         axios.post(this.apiUrl, data, { headers: {'Content-Type': 'multipart/form-data'} }).then((res)=>{
+            console.log (res.data)
             this.todoList = res.data
-     });
+            });
         //this.todoList[index].complete = !this.todoList[index].complete;
        },
 
-       delete (index){
+       deleteTask (index){
         const data = {
             deleteItem: index
         }
 
         axios.post(this.apiUrl, data, { headers: {'Content-Type': 'multipart/form-data'} }).then((res)=>{
+             console.log (res.data)
             this.todoList = res.data
+
             });
+           
        },
     },
     mounted() {
