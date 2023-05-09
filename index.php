@@ -25,14 +25,14 @@
                         <button @click="updateItem" class="btn btn-outline-primary ms-3" type="button" id="button-add">Aggiungi</button>
                     </div>
                     <div class="card-body d-flex justify-content-center align-items-center">
-                            <ul class="list-unstyled" v-if="todoList.length > 0 ">
+                            <ul class="list-unstyled">
                     
                         
-                                <li @click="complete(index)" class="d-flex justify-content-between" v-for="(item, index) in todoList" :class="item.complete ? 'text-decoration-line-through': '' ">
-                                    <p>{{item.text}}</p>
+                                <li  class="d-flex justify-content-between align-items-center gap-5 mt-2" v-for="(item, index) in todoList">
+                                    <p @click="complete(index)" :class="item.complete ? 'text-decoration-line-through': '' ">{{item.text}}</p>
+                                    <button type="button" class="btn btn-outline-primary ms-3 fs-6" @click="delete(index)" >Cancella</button>
                                 </li>
                             </ul>
-                            <p v-else>La lista della spesa è vuota</p>
                     </div>
                         
                 </div>    
